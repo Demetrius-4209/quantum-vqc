@@ -13,13 +13,12 @@ Phase 1 submission for Qiskit Fall Fest 2026. This project classifies a syntheti
 ## Setup
 
 ```bash
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-jupyter notebook main.ipynb
+py -3.13 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe main.py
 ```
 
-Run all notebook cells from top to bottom. Results are written to `results/tables/` and `results/figures/`.
+The direct commands avoid PowerShell execution-policy issues. To inspect the executed notebook, open `main.ipynb` in Jupyter or Antigravity after running `main.py`. Results are written to `results/tables/` and `results/figures/`.
 
 ## Repository map
 
@@ -28,3 +27,7 @@ See `main.ipynb` for the end-to-end experiment, `src/` for implementation, `proc
 ## Reproducibility
 
 All random seeds, split settings, transpilation settings, and shot counts are recorded in the notebook. Do not report numbers until the notebook has been run successfully and the generated files have been inspected.
+
+## Verified Phase 1 results
+
+The checked-in run uses 200 generated samples, 160 training samples, 40 test samples, and 4096 shots for each noisy processor evaluation. The VQC and logistic-regression baseline each reached 0.925 test accuracy. Processor A transpiled to depth 104 with 42 CX gates and an estimated 10 SWAPs; Processor B transpiled to depth 40 with 12 CX gates and 0 estimated SWAPs. These are measured results from the saved notebook and tables, not predictions of future hardware performance.

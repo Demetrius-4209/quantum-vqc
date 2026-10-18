@@ -197,7 +197,7 @@ Every component of this benchmark is deterministically reproducible:
 
 ## 10. Conclusion
 
-This benchmark conclusively demonstrates the critical role of quantum processor topology in circuit compilation:
+This controlled simulation demonstrates the role of quantum processor topology in circuit compilation:
 1. **Algorithmic Parity**: The team-authored 4-qubit VQC matches the classical Logistic Regression baseline (0.925 accuracy, 0.9143 F1 score).
 2. **Topological Advantage**: Processor B's cyclic connectivity completely eliminated routing overhead (0 SWAPs, 0 extra CX gates), whereas Processor A's linear topology incurred 10 SWAPs (+30 CX gates, +250% two-qubit overhead) and increased circuit depth by +85 steps.
 3. **Hardware-Algorithm Co-design**: Choosing a physical hardware architecture whose coupling graph naturally reflects the entangling structure of the quantum algorithm is paramount to minimizing error accumulation on NISQ devices.
